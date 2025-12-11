@@ -3,12 +3,25 @@ package org.example;
 import java.util.Arrays;
 
 public class MyQueue<E> {
+    private int size = 0;
     private Object[] array = new Object[0];
+
+    private void grow(int minSize){
+        int oldLength = array.length;
+
+        int newLength = Math.max(minSize - oldLength, oldLength / 2) + oldLength;
+
+        array = Arrays.copyOf(array, newLength);
+    }
 
     public void add(E value)
     {
-        array = Arrays.copyOf(array, array.length + 1);
-        array[array.length - 1] = value;
+        if(size == array.length){
+            grow(size + 1);
+        }
+
+        array[size] = value;
+        size++;
     }
     public void clear()
     {
@@ -39,7 +52,7 @@ public class MyQueue<E> {
 
             array = Arrays.copyOf(array, array.length - 1);
         }
-
+        size--;
         return tmp;
     }
 

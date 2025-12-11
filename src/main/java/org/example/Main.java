@@ -1,17 +1,24 @@
 package org.example;
 
 
+import javax.swing.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 public class Main {
     static void main(String[] args) {
-        MyHashMap<Integer,Integer> nums = new MyHashMap<>();
+        MyLinkedList<Integer> nums = new MyLinkedList<>();
 
-        nums.put(1,12);
+        System.out.println(nums.size());
+
+        nums.add(123);
+        nums.add(122);
+
+       /* nums.put(1,12);
         nums.put(2,54);
         nums.put(3,26);
-
+*/
         //System.out.println(nums.peek());
         System.out.println(nums.get(1));
         System.out.println(nums.size());
@@ -29,5 +36,7 @@ public class Main {
         //System.out.println(nums.peek());
 
         System.out.println(nums.size());
+
+
     }
 }

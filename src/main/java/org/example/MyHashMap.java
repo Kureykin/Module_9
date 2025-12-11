@@ -97,7 +97,7 @@ public class MyHashMap<K, V> {
         return size;
     }
 
-    public Object get(K key)
+    public V get(K key)
     {
         int i = hashTable.length - 1 & hash(key);
         Node<K,V> currentNode = hashTable[i];
