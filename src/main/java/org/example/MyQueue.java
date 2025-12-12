@@ -14,8 +14,7 @@ public class MyQueue<E> {
         array = Arrays.copyOf(array, newLength);
     }
 
-    public void add(E value)
-    {
+    public void add(E value){
         if(size == array.length){
             grow(size + 1);
         }
@@ -23,27 +22,22 @@ public class MyQueue<E> {
         array[size] = value;
         size++;
     }
-    public void clear()
-    {
+    public void clear() {
         array = new Object[0];
     }
-    public int size()
-    {
+    public int size() {
         return array.length;
     }
-    public Object peek()
-    {
+    public Object peek() {
         if(array.length == 0)
             return null;
 
         return array[0];
     }
-    public Object poll()
-    {
+    public Object poll(){
         Object tmp = null;
 
-        if (array.length > 0)
-        {
+        if (array.length > 0) {
             tmp = array[0];
 
             for (int i = 0; i < array.length - 1; i++) {

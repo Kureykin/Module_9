@@ -14,8 +14,7 @@ public class MyStack<E> {
         array = Arrays.copyOf(array, newLength);
     }
 
-    public void push(E value)
-    {
+    public void push(E value) {
         if(size == array.length){
             grow(size + 1);
         }
@@ -24,32 +23,28 @@ public class MyStack<E> {
         size++;
     }
 
-    public void remove(int index)
-    {
-        if (index < array.length)
+    public void remove(int index) {
+        if (index < array.length){
             for(int i = index; i < array.length - 1; i++)
                 array[i] = array[i + 1];
+        }
 
         size--;
     }
 
-    public void clear()
-    {
+    public void clear() {
         array = new Object[0];
     }
 
-    public int size()
-    {
+    public int size() {
         return array.length;
     }
 
-    public Object peek()
-    {
+    public Object peek() {
         return array.length > 0 ? array[array.length - 1] : null;
     }
 
-    public Object pop()
-    {
+    public Object pop() {
         Object tmp = null;
         if (array.length > 0) {
             tmp = array[array.length - 1];

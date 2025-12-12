@@ -43,7 +43,8 @@ public class MyLinkedList<E> {
             for (int i = 0; i < index; i++) {
                 currentNode = currentNode.next;
             }
-        } else {
+        }
+        else {
 
             for (int i = size; i > index; i--) {
                 currentNode = currentNode.prev;

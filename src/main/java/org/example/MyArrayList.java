@@ -42,8 +42,7 @@ public class MyArrayList<E> {
         return array[index];
     }
 
-    public void remove(int index)
-    {
+    public void remove(int index) {
             for (int i = index; i < array.length - 1; i++) {
                 array[i] = array[i + 1];
             }
@@ -51,8 +50,7 @@ public class MyArrayList<E> {
             size--;
     }
 
-    public void clear()
-    {
+    public void clear() {
       array = new Object[0];
       size = 0;
     }
